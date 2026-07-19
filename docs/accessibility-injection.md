@@ -55,6 +55,27 @@ Accessibility 點擊常失敗（狀態沒更新）。這正好印證我們的設
   商店描述/官網，要有實際同意動作），禁止欺騙性 UI 操作
 - 我們「用戶單次觸發、不自動送」的模式站得住，但揭露畫面要做
 
+## 補充查證（第二輪，合成階段故障，僅採信驗證數據）
+
+第二輪研究的合成報告壞掉（回傳空值），但驗證與來源仍可用，補三點：
+
+- **別寫死 resource-id**：「WhatsApp 用 `com.whatsapp:id/entry`/`:id/send` 固定
+  viewId 定位」被 0-3 駁回——這類 id 會隨版本改/被混淆。**語意查找（找
+  EditText 節點）比 viewId 穩**；LINE 的 `jp.naver.line.android:id/...` 我們現場
+  dump 當下有效即可用，但別假設跨版本不變。「填字後自動點送出鈕」在 WhatsApp
+  被 0-3 駁回，再次印證：**送出交給用戶**。
+- **可抄的開源實作**（AccessibilityService 填字/送訊範本）：
+  - [send2zap `GDGService.java`](https://github.com/michelcalacina/send2zap/blob/master/app/src/main/java/com/gdg/manaus/sendtowhatsapp/service/GDGService.java)
+  - [Voice-Control `WhatsappAccessibilityService.java`](https://github.com/pochunyan/Voice-Control-mobile/blob/master/app/src/main/java/com/example/tony/smarthelper/WhatsappAccessibilityService.java)
+  - [AutoWhatsapp `AutoMsgService.java`](https://github.com/srinivasan-r/AndroidApps/blob/master/AutoWhatsapp/app/src/main/java/com/vs/autowhatsapp/AutoMsgService.java)
+- **三服務共存**（Accessibility + overlay 浮動球 + MediaProjection 截圖）：
+  - AccessibilityService 走 `BIND_ACCESSIBILITY_SERVICE` 綁定、浮動球用
+    `SYSTEM_ALERT_WINDOW`、截圖用 MediaProjection——三者機制獨立，可同時存在
+  - **Android 14 起前景服務必須宣告 `foregroundServiceType`**；截圖服務要標
+    `mediaProjection`，且 [Android 14 每次啟動投影都要重新取得使用者同意](https://developer.android.com/about/versions/14/behavior-changes-14#media-projection-consent)
+    （[服務型別清單](https://developer.android.com/develop/background-work/services/fgs/service-types)）
+  - 已知痛點參考：[droidVNC-NG #195](https://github.com/bk138/droidVNC-NG/issues/195)（a11y + 投影共存的實例）
+
 ## 今日實作第一步（省時）
 
 在跑 LINE 的模擬器上：
