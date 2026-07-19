@@ -47,7 +47,7 @@ export default function Home() {
     <main>
       <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
         <a className="brand" href="#top" aria-label="聊天軍師首頁">
-          <span className="brand__orb">✦</span>
+          <span className="brand__orb"><img src="/chat-wingman-icon.png" alt="" /></span>
           <span>聊天軍師</span>
         </a>
         <button className="nav__cta" type="button">安裝 App</button>
@@ -90,7 +90,7 @@ export default function Home() {
             </div>
             <div className="typing"><span>輸入訊息...</span><b>➤</b></div>
           </div>
-          <div className="wingman-orb"><span>✦</span><i /></div>
+          <div className="wingman-orb"><img src="/chat-wingman-icon.png" alt="聊天軍師" /><i /></div>
           <div className="answer-card">
             <div className="answer-card__top">
               <span>軍師分析中</span><b>聊死指數 78</b>
@@ -126,7 +126,7 @@ export default function Home() {
                 {item.chat.map((line, index) => (
                   <p className={index === 1 ? "mini-chat__out" : ""} key={line}>{line}</p>
                 ))}
-                <div className="mini-chat__orb">✦</div>
+                <div className="mini-chat__orb"><img src="/chat-wingman-icon.png" alt="" /></div>
               </div>
             </article>
           ))}
@@ -135,7 +135,7 @@ export default function Home() {
 
       <section className="closing">
         <div>
-          <span className="brand__orb">✦</span>
+          <span className="brand__orb"><img src="/chat-wingman-icon.png" alt="" /></span>
           <h2>別讓一句「哈哈」<br />成為對話的句點。</h2>
           <p>軍師就在旁邊，陪你把話好好說下去。</p>
           <button className="button button--light" type="button">立即安裝 App <span>↗</span></button>

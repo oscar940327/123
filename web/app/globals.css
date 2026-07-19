@@ -36,7 +36,8 @@ button { cursor: pointer; }
 }
 .nav--scrolled { background: rgba(11,8,19,.76); backdrop-filter: blur(18px); border-color: rgba(255,255,255,.08); }
 .brand { color: white; display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; letter-spacing: .04em; }
-.brand__orb { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: white; background: linear-gradient(135deg, var(--purple), var(--pink)); box-shadow: 0 0 24px rgba(133,89,255,.5); }
+.brand__orb { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 4px; overflow: hidden; border-radius: 50%; background: #fff0dc; box-shadow: 0 0 24px rgba(239,99,52,.42); }
+.brand__orb img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 .nav__cta { color: white; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.07); padding: 10px 19px; border-radius: 999px; transition: .25s; }
 .nav__cta:hover { background: white; color: var(--night); transform: translateY(-2px); }
 
@@ -73,7 +74,8 @@ button { cursor: pointer; }
 .message--out { align-self: flex-end; border-radius: 16px 16px 5px 16px; background: linear-gradient(120deg, #7751ec, #9559eb); color: white; }
 .typing { position: absolute; bottom: 22px; left: 18px; right: 18px; height: 43px; border-radius: 22px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 18px; color: #706b7d; font-size: 11px; background: #24212e; }
 .typing b { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: #7855e9; color: white; }
-.wingman-orb { position: absolute; z-index: 5; right: 5px; top: 220px; width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; font-size: 28px; background: radial-gradient(circle at 30% 25%, #bb9aff, #7449ec 55%, #42239b); border: 2px solid rgba(255,255,255,.35); box-shadow: 0 0 0 9px rgba(122,78,243,.1), 0 15px 45px rgba(116,73,236,.55); animation: float 3.2s ease-in-out infinite; }
+.wingman-orb { position: absolute; z-index: 5; right: 5px; top: 220px; width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; padding: 7px; overflow: hidden; background: #fff0dc; border: 2px solid rgba(255,255,255,.55); box-shadow: 0 0 0 9px rgba(239,99,52,.1), 0 15px 45px rgba(239,99,52,.42); animation: float 3.2s ease-in-out infinite; }
+.wingman-orb img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 .wingman-orb i { position: absolute; width: 9px; height: 9px; right: 3px; bottom: 8px; background: #6bf0b3; border-radius: 50%; border: 2px solid #42239b; }
 .answer-card { position: absolute; z-index: 4; width: 360px; right: 40px; top: 305px; padding: 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.16); background: rgba(26,21,40,.88); backdrop-filter: blur(20px); box-shadow: 0 28px 70px rgba(0,0,0,.4); animation: cardFloat 4s ease-in-out infinite; }
 .answer-card__top { display: flex; align-items: center; justify-content: space-between; color: #b2aaba; font-size: 10px; }
@@ -105,7 +107,8 @@ button { cursor: pointer; }
 .challenge:nth-child(even) .mini-chat { transform: rotate(-2deg); }
 .mini-chat p { width: fit-content; max-width: 80%; margin: 0 0 13px; padding: 10px 13px; border-radius: 13px 13px 13px 4px; color: #d6d0dc; background: #2a2532; font-size: 11px; }
 .mini-chat p.mini-chat__out { margin-left: auto; color: white; border-radius: 13px 13px 4px 13px; background: var(--accent); }
-.mini-chat__orb { position: absolute; right: -18px; bottom: 25px; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--accent); box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 50%, transparent); animation: float 3s ease-in-out infinite; }
+.mini-chat__orb { position: absolute; right: -18px; bottom: 25px; width: 54px; height: 54px; display: grid; place-items: center; padding: 5px; overflow: hidden; border-radius: 50%; background: #fff0dc; box-shadow: 0 8px 28px rgba(239,99,52,.38); animation: float 3s ease-in-out infinite; }
+.mini-chat__orb img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 
 .closing { min-height: 650px; display: grid; place-items: center; text-align: center; padding: 80px 24px; background: radial-gradient(circle at 50% 25%, #3c266a, #0d0915 62%); }
 .closing > div { max-width: 800px; }

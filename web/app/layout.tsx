@@ -11,6 +11,11 @@ const notoSans = Noto_Sans_TC({
 export const metadata: Metadata = {
   title: "聊天軍師 Chat Wingman｜讓每段對話都有下一句",
   description: "不離開聊天室，點一下就能讀懂氣氛、找到話題。你的 AI 聊天軍師，隨時陪你把話好好說下去。",
+  icons: {
+    icon: "/chat-wingman-icon.png",
+    shortcut: "/chat-wingman-icon.png",
+    apple: "/chat-wingman-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
