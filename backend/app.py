@@ -14,6 +14,7 @@ from flask_cors import CORS
 from prompt import DEMO_RESPONSE, SYSTEM_PROMPT
 
 app = Flask(__name__)
+app.json.ensure_ascii = False  # 回傳中文不轉義，方便除錯
 CORS(app)
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")

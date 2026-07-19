@@ -49,4 +49,10 @@ GPT-4o vision 讀圖 → 判讀語境
 - [深度研究 II：iOS 捷徑實作指南](docs/ios-shortcuts.md) — 免寫 app 路線，照做就能動
 - [深度研究 III：Accessibility 填字實作](docs/accessibility-injection.md) — ACTION_SET_TEXT 定位填字、LINE 實測缺口、備援階梯
 - [API 合約](docs/api.md) — 前後端介面，敲定後可並行開發
+- [iOS 捷徑建構指南](ios/wingman-shortcut-build.md) — 打後端版，10 分鐘手建、免放金鑰
 - [開發規劃](docs/plan.md) — 架構拆解、分工、時間表、風險備案
+
+## 目錄
+
+- `backend/` — Flask `/api/wingman`（GPT-4o vision + demo 模式）
+- `ios/` — 捷徑建構指南 + 後端接點測試腳本
