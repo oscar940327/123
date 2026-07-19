@@ -1,5 +1,9 @@
 # 市場調查（2026-07-19）
 
+> 更深入的多來源對抗式驗證版本見 [deep-research.md](deep-research.md)——
+> 含 Arc/Crystal Ball/CheckMate 三大先例對照、Google Play 與 LINE 合規結論、
+> 以及 **pitch 禁用的 Rizz 數據清單**。
+
 結論：**「截圖 → AI 回覆建議」已是紅海；「浮動球 + 就地截圖 + 不離開聊天室」
 這個組合還沒有專門的聊天軍師產品。差異點就在那顆球上。**
 

@@ -45,4 +45,6 @@ GPT-4o vision 讀圖 → 判讀語境
 ## 文件
 
 - [市場調查](docs/research.md) — 競品盤點與差異化定位
+- [深度研究 I：產品空間](docs/deep-research.md) — 對抗式驗證的競品/合規結論、pitch 禁用數據
+- [深度研究 II：iOS 捷徑實作指南](docs/ios-shortcuts.md) — 免寫 app 路線，照做就能動
 - [開發規劃](docs/plan.md) — 架構拆解、分工、時間表、風險備案
