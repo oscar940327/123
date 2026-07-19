@@ -20,6 +20,22 @@
 **備案階梯**：MediaProjection 卡住 → 改「使用者按系統截圖 → 點球 →
 app 抓 MediaStore 最新一張截圖」，少一步但穩，demo 照樣成立。
 
+### Accessibility 定位＋填字層（不用寫死座標）
+
+盲人輔助 API（AccessibilityService）給的是整棵 UI 節點樹
+（AccessibilityNodeInfo），不是像素——CheckMate 硬編碼 1256px
+只能跑單一機型的坑，我們用語意查找直接解掉：
+
+- 找輸入框：遍歷節點樹找 `className == EditText && isEditable`
+  （比 viewId 穩，換手機/換聊天 app 都通用）；需要位置時 `getBoundsInScreen()`
+- **殺手應用**：對輸入框節點 `ACTION_SET_TEXT`——demo 從「複製→切回→貼上」
+  變成「點卡片，字直接出現在 LINE 輸入框」，用戶只按送出
+  （送出仍是用戶手按，不踩自動代發紅線）
+- 分層：讀內容仍走截圖+vision（看得懂貼圖/照片、任何 app 通用）；
+  定位與填字走節點樹；節點讀 TextView 當網路慢時的文字備援
+- 坑：FLAG_SECURE app 擋截圖不擋節點樹，反之有些 app 標
+  `importantForAccessibility=no`；LINE 節點可讀（TalkBack 用戶在用）
+
 ## 分工
 
 | 人 | 負責 | 產出 |
